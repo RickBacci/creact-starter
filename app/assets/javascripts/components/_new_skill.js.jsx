@@ -1,10 +1,9 @@
-var Main = React.createClass({
+var NewSkill = React.createClass({
 
   render() {
     return (
       <div>
-        <Header />
-        <Body />
+        <h3>NewSkill</h3>
       </div>
     )
   }

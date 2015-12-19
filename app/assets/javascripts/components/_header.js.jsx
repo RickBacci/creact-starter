@@ -1,7 +1,10 @@
 var Header = React.createClass({
+
   render() {
     return (
-      <h1>Creact</h1>
+      <div>
+        <h1>Header</h1>
+      </div>
     )
   }
 

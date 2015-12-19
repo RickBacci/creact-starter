@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'rails', '4.2.3'
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -18,3 +20,5 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
 end
+
+gem 'rails_12factor', group: :production

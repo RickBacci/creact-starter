@@ -1,7 +1,9 @@
 var NewSkill = React.createClass({
 
   handleClick() {
-    console.log('in handle click!')
+    let name    = this.refs.name.getDOMNode().value;
+    let details = this.refs.details.getDOMNode().value;
+    console.log(name, details);
   },
 
   render() {

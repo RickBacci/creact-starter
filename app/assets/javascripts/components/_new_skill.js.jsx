@@ -3,7 +3,16 @@ var NewSkill = React.createClass({
   handleClick() {
     let name    = this.refs.name.getDOMNode().value;
     let details = this.refs.details.getDOMNode().value;
-    console.log(name, details);
+
+    $.ajax({
+      url:  '/api/v1/skills',
+      type: 'POST',
+      data: { skill: { name: name, details: details } },
+      success: (response) => {
+        console.log('it worked!', response);
+      }
+    });
+
   },
 
   render() {

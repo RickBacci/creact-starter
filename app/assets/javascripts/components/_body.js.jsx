@@ -34,11 +34,33 @@ var Body = React.createClass({
     this.setState({ skills: newSkills });
   },
 
+  handleUpdate(skill) {
+    console.log('in handleUpdate in body')
+    debugger;
+    $.ajax({
+      url: `/api/v1/skills/${skill.id}`,
+      type: 'PUT',
+      data: { skill: skill },
+      success: () => {
+        this.updateSkills(skill);
+      }
+    });
+  },
+
+  updateSkills(skill) {
+    var skills = this.state.skills.filter((s) => { return s.id != skill.id });
+    skills.push(skill);
+
+    this.setState({ skills: skills });
+  },
+
   render() {
     return (
       <div>
-        <NewSkill handleSubmit={ this.handleSubmit } />
-        <AllSkills skills={this.state.skills} handleDelete={this.handleDelete} />
+        <NewSkill handleSubmit={this.handleSubmit} />
+        <AllSkills skills={this.state.skills}
+          handleDelete={this.handleDelete}
+          onUpdate={this.handleUpdate} />
       </div>
     )
   }

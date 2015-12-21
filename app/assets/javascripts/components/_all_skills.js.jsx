@@ -1,6 +1,11 @@
 var AllSkills = React.createClass({
+
   handleDelete(id) {
     this.props.handleDelete(id);
+  },
+
+  handleEdit() {
+    console.log('in handleEdit');
   },
 
   render() {
@@ -11,6 +16,7 @@ var AllSkills = React.createClass({
           <p><strong>Level:</strong> {skill.level}</p>
           <p>{skill.details}</p>
           <button onClick={this.handleDelete.bind(this, skill.id)}>Delete</button>
+          <button onClick={this.handleEdit}>Edit</button>
         </div>
       )
     });

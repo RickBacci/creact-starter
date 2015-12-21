@@ -36,7 +36,6 @@ var Body = React.createClass({
 
   handleUpdate(skill) {
     console.log('in handleUpdate in body')
-    debugger;
     $.ajax({
       url: `/api/v1/skills/${skill.id}`,
       type: 'PUT',
